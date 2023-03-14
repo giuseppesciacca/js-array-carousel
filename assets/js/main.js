@@ -14,19 +14,6 @@ const nextBtn = document.querySelector('.btn_down');
 
 let activeClass = 0;
 
-nextBtn.addEventListener('click', function () {
-    activeClass++;
-    console.log(activeClass);
-
-});
-
-
-prevBtn.addEventListener('click', function () {
-    activeClass--;
-    console.log(activeClass);
-
-});
-
 for (let i = 0; i < imgsList.length; i++) {
     const element = imgsList[i];
     console.log(element);
@@ -36,3 +23,24 @@ for (let i = 0; i < imgsList.length; i++) {
 };
 
 const allImgsEl = document.querySelectorAll('img');
+const currentImg = allImgsEl[activeClass];
+
+nextBtn.addEventListener('click', function () {
+    console.log(activeClass);
+    console.log(allImgsEl);
+    console.log(currentImg);
+
+    currentImg.classList.remove('active');
+    activeClass++;
+
+    const nextImg = allImgsEl[activeClass];
+
+    nextImg.classList.add('active');
+});
+
+
+prevBtn.addEventListener('click', function () {
+    activeClass--;
+    console.log(activeClass);
+
+});
