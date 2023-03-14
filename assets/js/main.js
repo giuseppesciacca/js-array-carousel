@@ -14,18 +14,25 @@ const nextBtn = document.querySelector('.btn_down');
 
 let activeClass = 0;
 
-for (let i = 0; i < imgsList.length; i++) {
-    const element = imgsList[i];
-    console.log(element);
-
-    //inserisco nell'html
-    imagesEl.innerHTML = `<img class="img-fluid ${i === activeClass ? 'active' : ''}" src="./assets/img/${element} " alt="">`
-};
-
-const allImgsEl = document.querySelectorAll('img');
-
 nextBtn.addEventListener('click', function () {
     activeClass++;
     console.log(activeClass);
 
 });
+
+
+prevBtn.addEventListener('click', function () {
+    activeClass--;
+    console.log(activeClass);
+
+});
+
+for (let i = 0; i < imgsList.length; i++) {
+    const element = imgsList[i];
+    console.log(element);
+
+    //inserisco nell'html
+    imagesEl.innerHTML += `<img class="img-fluid ${i === activeClass ? 'active' : ''}" src="./assets/img/${element} " alt="">`
+};
+
+const allImgsEl = document.querySelectorAll('img');
