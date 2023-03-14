@@ -11,3 +11,7 @@
     bottom: 1%;
     left: 50%;
 }
+
+img:not(.active) {
+    display: none;
+}
