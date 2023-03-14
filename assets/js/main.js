@@ -24,24 +24,31 @@ for (let i = 0; i < imgsList.length; i++) {
 
 const allImgsEl = document.querySelectorAll('img');
 
+//bottone vai avanti
 nextBtn.addEventListener('click', function () {
     const currentImg = allImgsEl[activeClass];
     console.log(activeClass);
     currentImg.classList.remove('active');
 
     activeClass++;
+    if (activeClass == imgsList.length) {
+        activeClass = 0;
+    }
 
     const nextImg = allImgsEl[activeClass];
     nextImg.classList.add('active');
 });
 
-
+//bottone torna indietro
 prevBtn.addEventListener('click', function () {
     const currentImg = allImgsEl[activeClass];
     console.log(activeClass);
     currentImg.classList.remove('active');
 
     activeClass--;
+    if (activeClass < 0) {
+        activeClass = (imgsList.length - 1);
+    }
 
     const nextImg = allImgsEl[activeClass];
     nextImg.classList.add('active');
