@@ -1,0 +1,13 @@
+.wrapper {
+    height: 100vh;
+}
+
+.btn_up {
+    top: 1%;
+    left: 50%;
+}
+
+.btn_down {
+    bottom: 1%;
+    left: 50%;
+}
