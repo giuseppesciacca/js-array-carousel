@@ -9,13 +9,23 @@ const imgsList = [
 ];
 
 const imagesEl = document.querySelector('.images');
-console.log(imagesEl);
+const prevBtn = document.querySelector('.btn_up');
+const nextBtn = document.querySelector('.btn_down');
+
+let activeClass = 0;
 
 for (let i = 0; i < imgsList.length; i++) {
     const element = imgsList[i];
     console.log(element);
 
-    imagesEl.innerHTML += `<img class="img-fluid active" src="./assets/img/${element} " alt="">`
+    //inserisco nell'html
+    imagesEl.innerHTML = `<img class="img-fluid ${i === activeClass ? 'active' : ''}" src="./assets/img/${element} " alt="">`
+};
 
+const allImgsEl = document.querySelectorAll('img');
 
-}
+nextBtn.addEventListener('click', function () {
+    activeClass++;
+    console.log(activeClass);
+
+});
