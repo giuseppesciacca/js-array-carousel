@@ -23,24 +23,26 @@ for (let i = 0; i < imgsList.length; i++) {
 };
 
 const allImgsEl = document.querySelectorAll('img');
-const currentImg = allImgsEl[activeClass];
 
 nextBtn.addEventListener('click', function () {
+    const currentImg = allImgsEl[activeClass];
     console.log(activeClass);
-    console.log(allImgsEl);
-    console.log(currentImg);
-
     currentImg.classList.remove('active');
+
     activeClass++;
 
     const nextImg = allImgsEl[activeClass];
-
     nextImg.classList.add('active');
 });
 
 
 prevBtn.addEventListener('click', function () {
-    activeClass--;
+    const currentImg = allImgsEl[activeClass];
     console.log(activeClass);
+    currentImg.classList.remove('active');
 
+    activeClass--;
+
+    const nextImg = allImgsEl[activeClass];
+    nextImg.classList.add('active');
 });
